@@ -1,11 +1,17 @@
+var _                 = require('lodash');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path              = require('path')
-var webpack           = require('webpack')
+var path              = require('path');
+var webpack           = require('webpack');
+
+var pkg = require('./package.json');
 
 var env = process.env.NODE_ENV;
 
 var config = {
     devTool: 'cheap-module-eval-source-map',
+    entry: {
+        vendor: _.map(pkg.peerDependencies, function (value, key) { return key; })
+    },
     module: {
         loaders: [
             { test: /\.js$/, loaders: ['babel-loader'], exclude: /node_modules/ }
@@ -29,6 +35,10 @@ var config = {
 if (env === 'production') {
     config.devTool = 'cheap-module-source-map';
     config.plugins.push(
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.min.js')
+    );
+
+    config.plugins.push(
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
                 pure_getters: true,
@@ -38,6 +48,10 @@ if (env === 'production') {
                 warnings: false
             }
         })
+    );
+} else {
+    config.plugins.push(
+        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
     );
 }
 
