@@ -14,7 +14,7 @@
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min && npm run build:styles",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
     "build:es": "cross-env BABEL_ENV=es babel src --out-dir es",
-    "build:styles": "mkdir -p dist && stylus --use nib src/index.styl -o dist/COMPONENT_NAME.css && postcss --use autoprefixer dist/COMPONENT_NAME.css -d dist && postcss --use cssnano dist/COMPONENT_NAME.css -o dist/COMPONENT_NAME.min.css",
+    "build:styles": "stylus --use nib --use @revolttv/revolt-styles src/index.styl -o dist/COMPONENT_NAME.css && postcss --use autoprefixer dist/COMPONENT_NAME.css -d dist && postcss --use cssnano dist/COMPONENT_NAME.css -o dist/COMPONENT_NAME.min.css",
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/COMPONENT_NAME.js",
     "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/COMPONENT_NAME.min.js",
     "clean": "rimraf lib dist es coverage .tmp",
@@ -78,5 +78,8 @@
     "redux": "^3.3.1",
     "revolt-logger": "0.0.4"
   },
-  "stylus": "src/index.styl"
+  "stylus": "src/index.styl",
+  "dependencies": {
+    "@revolttv/revolt-styles": "^0.1.0"
+  }
 }

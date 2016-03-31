@@ -42,7 +42,7 @@ module.exports = {
         return [autoprefixer]
     },
     stylus: {
-        use: [require('nib')()],
-        import: ['~nib/lib/nib/index.styl']
+        use: [require('nib')(), require('@revolttv/revolt-styles')()],
+        import: ['~@revolttv/revolt-styles/lib/revolt-styles/index.styl']
     }
 }
