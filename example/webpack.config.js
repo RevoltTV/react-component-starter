@@ -36,6 +36,10 @@ module.exports = {
                 plugins: [ 'add-module-exports' ],
                 presets: [ 'es2015', 'stage-0', 'react', 'react-hmre' ]
             }
+        }, {
+            test: /\.js$/,
+            loader: 'eslint-loader',
+            exclude: /node_modules/
         }]
     },
     postcss: function ()  {
