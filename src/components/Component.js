@@ -1,14 +1,14 @@
+const debug = require('debug')('revolt:YOUR_COMPONENT');
+
 import { bindActionCreators } from 'redux';
 import { connect }            from 'react-redux';
-import logger                 from 'revolt-logger';
 import React                  from 'react';
 
 export class Component extends React.Component {
     constructor(props) {
         super(props);
 
-        this.log = logger.get('Component');
-        this.log.trace({ props }, 'constructed');
+        debug('constructed', props);
     }
 
     render() {
