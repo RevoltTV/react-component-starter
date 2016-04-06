@@ -63,6 +63,10 @@
     "postcss-cli": "^2.5.1",
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.4.1",
+    "redux": "^3.3.1",
     "rimraf": "^2.5.2",
     "sinon": "^1.17.3",
     "style-loader": "^0.13.1",
@@ -72,7 +76,7 @@
     "webpack-dev-server": "^1.14.1"
   },
   "peerDependencies": {
-    "lodash": "^4.6.1",
+    "lodash": "^4.8.1",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.4.1",

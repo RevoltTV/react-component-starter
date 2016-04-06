@@ -35,7 +35,7 @@ var config = {
 if (env === 'production') {
     config.devTool = 'cheap-module-source-map';
     config.plugins.push(
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.min.js')
+        new webpack.optimize.CommonsChunkPlugin('vendor', '../.tmp/vendor.min.js')
     );
 
     config.plugins.push(
@@ -51,7 +51,7 @@ if (env === 'production') {
     );
 } else {
     config.plugins.push(
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js')
+        new webpack.optimize.CommonsChunkPlugin('vendor', '../.tmp/vendor.js')
     );
 }
 
