@@ -1,5 +1,4 @@
 var _                 = require('lodash');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path              = require('path');
 var webpack           = require('webpack');
 
