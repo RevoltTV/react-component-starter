@@ -1,4 +1,4 @@
-const debug = require('debug')('revolt:YOUR_COMPONENT');
+const debug = require('debug')('@revolttv:YOUR_COMPONENT');
 
 import { bindActionCreators } from 'redux';
 import { connect }            from 'react-redux';
