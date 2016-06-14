@@ -18,7 +18,7 @@
     "build:styles": "stylus --use nib --use @revolttv/revolt-styles src/index.styl -o dist/COMPONENT_NAME.css && postcss --use autoprefixer dist/COMPONENT_NAME.css -d dist && postcss --use cssnano dist/COMPONENT_NAME.css -o dist/COMPONENT_NAME.min.css",
     "build:umd": "cross-env BABEL_ENV=commonjs NODE_ENV=development webpack src/index.js dist/COMPONENT_NAME.js",
     "build:umd:min": "cross-env BABEL_ENV=commonjs NODE_ENV=production webpack src/index.js dist/COMPONENT_NAME.min.js",
-    "clean": "rimraf lib dist es coverage .tmp",
+    "clean": "rimraf lib dist es coverage .tmp styl",
     "copy:stylus": "copyfiles -u 1 src/**/*.styl styl",
     "coverage": "babel-node ./node_modules/.bin/isparta cover _mocha -- -R spec --compilers js:babel-core/register",
     "lint": "eslint src test",
